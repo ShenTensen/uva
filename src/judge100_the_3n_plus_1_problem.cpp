@@ -18,11 +18,13 @@ int CountStep(int value) {
 int main() {
   std::vector<int> results;
   int first, last;
+  const int kLeast = 1, kMost = 100000;
   while (std::cin >> first >> last) {
-    if (first < 1 || last > 10000 || last < first) {
-      std::cerr << "first: " << first << " last: " << last
-                << ", should among [0, 10000]!" << std::endl;
-      break;
+    if (first < kLeast || last > kMost || last < first) {
+      std::cerr << "first: " << first << " last: " << last << ", should among ["
+                << kLeast << ", " << kMost
+                << "], and first cannot bigger than last.\n";
+      continue;
     }
 
     int biggest = 1;
@@ -42,7 +44,7 @@ int main() {
   for (const auto &i : results) {
     std::cout << i << " ";
     if (++count % 3 == 0) {
-      std::cout << std::endl;
+      std::cout << '\n';
     }
   }
 
