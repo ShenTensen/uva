@@ -1,3 +1,7 @@
+// The Algorithm Design Manual, Second Edition
+// Programming Challenges
+//
+// 1.1. "The 3n + 1 Problem" - Programming Challenges 110101, UVA Judge 100.
 #include <iostream>
 #include <vector>
 
