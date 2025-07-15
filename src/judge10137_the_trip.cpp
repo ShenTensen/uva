@@ -43,12 +43,11 @@ std::vector<double> Calculate(const AllTripsData &trips_expenses) {
     double greater_sum = 0.0, smaller_sum = 0.0;
     int greater_count = 0, smaller_count = 0;
     for (auto money : expenses) {
-      double money_cent = money;
-      if (money_cent < average) {
-        smaller_sum += money_cent;
+      if (money < average) {
+        smaller_sum += money;
         ++smaller_count;
-      } else if (average < money_cent) {
-        greater_sum += money_cent;
+      } else if (average < money) {
+        greater_sum += money;
         ++greater_count;
       }
     }
