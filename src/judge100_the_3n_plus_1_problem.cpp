@@ -22,17 +22,22 @@ int CountStep(int value) {
 int main() {
   std::vector<int> results;
   int first, last;
-  const int kLeast = 1, kMost = 100000;
+  const int kLeast = 1, kMost = 1000000;
   while (std::cin >> first >> last) {
-    if (first < kLeast || last > kMost || last < first) {
+    if (first < kLeast || last > kMost) {
       std::cerr << "first: " << first << " last: " << last << ", should among ["
-                << kLeast << ", " << kMost
-                << "], and first cannot bigger than last.\n";
+                << kLeast << ", " << kMost << "]\n";
       continue;
     }
 
+    int begin_index = first, end_index = last;
+    if (last < first) {
+      begin_index = last;
+      end_index = first;
+    }
+
     int biggest = 1;
-    for (int i = first; i < last + 1; ++i) {
+    for (int i = begin_index; i < end_index + 1; ++i) {
       int step = CountStep(i);
       if (biggest < step) {
         biggest = step;
