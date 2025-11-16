@@ -13,4 +13,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(sourceDir src)
 
 add_executable(judge100_the_3n_plus_1_problem ${sourceDir}/judge100_the_3n_plus_1_problem.cpp)
-add_executable(judge10137_the_trip ${sourceDir}/judge10137_the_trip.cpp)
+add_executable(judge10137_the_trip            ${sourceDir}/judge10137_the_trip.cpp)
+add_executable(judge10142_australian_voting   ${sourceDir}/judge10142_australian_voting.cpp)
+
