@@ -1,0 +1,9 @@
+#+title:  README.org
+#+author: ShenTensen
+#+date:  <2025-12-21 周日>
+
+* Test
+目前部分实现judge 10142的python测试脚本。
+1) 找到test目录下的judge10142目录
+2) 选择用终端打开
+3) 执行： python test10142.py
