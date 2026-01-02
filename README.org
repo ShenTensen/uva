@@ -1,8 +1,22 @@
 #+title:  README.org
-#+author: ShenTensen
+#+author: uHunt :: fa (shenfa)
 #+date:  <2025-12-21 周日>
 
-* Test
+* Problems
+1) 100 - The 3n + 1 problem
+   https://onlinejudge.org/external/1/100.pdf
+2) 10137 - The Trip
+3) 10142 - Australian Voting
+
+* 使用CMake
+** 终端命令
+cmake -B build -DCMAKE_BUILD_TYPE=Debug
+cd build
+cmake --build .
+ctest -C Debug
+
+
+* 测试
 目前部分实现judge 10142的python测试脚本。
 1) 找到test目录下的judge10142目录
 2) 选择用终端打开
