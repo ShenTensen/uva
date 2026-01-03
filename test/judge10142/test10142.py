@@ -61,17 +61,29 @@ def compare_unbounded(program_out, reference_out, filename):
       program_output.write(line + "\n")
   return passed
 
-def run_test(group_path, test_slug, output_type=None):
+def run_test(group_path, program_name, test_slug, output_type=None):
   output_slug = test_slug
   if output_type:
     output_slug += "-" + output_type
-  program_path = os.path.join(group_path, "%s.exe" % test_slug)
-  input_path = os.path.join(group_path, "program_input", "%s-input.txt" % output_slug)
+  program_path = os.path.join(group_path, program_name)
+  input_path = os.path.join(group_path, "program_input", "%s-input.txt" % test_slug)
   output_path = os.path.join(group_path, "program_output", "%s-output.txt" % output_slug)
-  reference_output_path = os.path.join(group_path, "reference_output", "%s-ref.txt" % output_slug)
-  test_runner = ProgramTest(group_path, program_path, input_path, reference_output_path)
+  reference_path = os.path.join(group_path, "reference_output", "%s-output-ref.txt" % output_slug)
+  test_runner = ProgramTest(group_path, program_path, input_path, reference_path)
   return test_runner(output_path)
 
 
+def run_tests():
+  fls = os.listdir(os.path.join(script_dir, "program_input"))
+  inputs = []
+  for filename in sorted(fls):
+    match = re.match(r"^(.+)\-input.txt$", filename)
+    if match:
+      test_slug = match.group(1)
+      inputs.append("%s" % test_slug)
+
+  for input_filename in inputs:
+    run_test(script_dir, "judge10142_australian_voting", input_filename)
+
 if __name__ == "__main__":
-  run_test(script_dir, "judge10142_australian_voting")
+  run_tests()
