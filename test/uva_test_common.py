@@ -102,3 +102,7 @@ def run_tests(problem_dir, command):
       print("There are no tests for %s!\n" % command)
     else:
       print("Passed %d/%d tests\n" % (tests_passed, (tests_passed + tests_failed)))
+  if tests_failed != 0:
+    return False
+  else:
+    return True

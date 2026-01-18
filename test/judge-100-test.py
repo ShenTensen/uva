@@ -9,5 +9,15 @@ from test import uva_test_common
 
 COMMAND = gtest_test_utils.GetTestExecutablePath('judge100_the_3n_plus_1_problem')
 
+def TestJudge100():
+  return uva_test_common.run_tests("judge100", COMMAND)
+
+
+class Judge100Test(gtest_test_utils.TestCase):
+
+  def test(self):
+    self.assertTrue(TestJudge100())
+
+
 if __name__ == "__main__":
-  uva_test_common.run_tests("judge100", COMMAND)
+  gtest_test_utils.Main()
