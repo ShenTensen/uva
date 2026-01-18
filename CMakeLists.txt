@@ -45,6 +45,9 @@ function(py_test name)
   set_tests_properties(${name} PROPERTIES ENVIRONMENT PYTHONPATH=${CMAKE_SOURCE_DIR})
 endfunction()
 
+
 enable_testing()
 
-py_test(judge10142/test10142)
+py_test(judge10142/test10142_test)
+py_test(judge-10142-test)
+py_test(judge-100-test)
