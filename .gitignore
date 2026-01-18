@@ -34,3 +34,6 @@
 
 build
 problems
+Testing
+*.pyc
+*program_output*
