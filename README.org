@@ -15,6 +15,7 @@
 2) cd build
 3) cmake --build .
 *** ctest测试
+依旧在build目录下
 ctest -C Debug
 
 * 测试
