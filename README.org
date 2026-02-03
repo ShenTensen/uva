@@ -10,10 +10,11 @@
 
 * 使用CMake
 ** 终端命令
-cmake -B build -DCMAKE_BUILD_TYPE=Debug
-cd build
-cmake --build .
-** ctest测试
+*** 构建项目
+1) cmake -B build -DCMAKE_BUILD_TYPE=Debug
+2) cd build
+3) cmake --build .
+*** ctest测试
 ctest -C Debug
 
 * 测试
