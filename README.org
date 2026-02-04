@@ -27,10 +27,6 @@
 问题目录下有problem_input、problem_output和reference_output
 以problem_input下的txt文件为输入，程序输出和reference_output做比较，
 输入文件名为xxx-input.txt，参考输出文件名为xxx-output-ref.txt。
-** 目前实现judge 10142的python测试脚本
-1) 找到test目录下的judge10142目录
-2) 选择用终端打开
-3) 执行： python test10142.py
 ** 输入和参考输出
 *** 10142
 https://www.udebug.com/UVa/10142
