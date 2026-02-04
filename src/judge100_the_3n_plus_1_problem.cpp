@@ -51,9 +51,11 @@ int main() {
 
   int count = 0;
   for (const auto &i : results) {
-    std::cout << i << " ";
+    std::cout << i;
     if (++count % 3 == 0) {
       std::cout << '\n';
+    } else {
+      std::cout << ' ';
     }
   }
 
