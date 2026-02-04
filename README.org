@@ -6,6 +6,7 @@
 1) 100 - The 3n + 1 problem
    https://onlinejudge.org/external/1/100.pdf
 2) 10137 - The Trip
+   https://onlinejudge.org/external/101/10137.pdf
 3) 10142 - Australian Voting
 
 * 使用CMake
@@ -16,7 +17,9 @@
 3) cmake --build .
 *** ctest测试
 依旧在build目录下
-ctest -C Debug
+- ctest -C Debug
+如果想在程序错误时输出信息，那么执行命令
+- ctest -C Debug --rerun-failed --output-on-failure
 
 * 测试
 ** 测试文件命名方式

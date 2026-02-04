@@ -49,4 +49,5 @@ endfunction()
 enable_testing()
 
 py_test(judge-100-test)
+py_test(judge-10137-test)
 py_test(judge-10142-test)
