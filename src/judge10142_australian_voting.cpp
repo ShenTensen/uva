@@ -66,7 +66,6 @@ Cases ReadInput() {
     voting_cases.push_back(std::make_pair(candidates, ballots));
   }
 
-  std::cout << std::endl;
   return voting_cases;
 }
 
