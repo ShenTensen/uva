@@ -3,6 +3,7 @@
 //
 // 1-3 "Australian Voting" - Programming Challenges 110108, UVA Judge 10142.
 
+#include <algorithm>
 #include <cassert>  // assert
 #include <limits>
 #include <list>
@@ -183,7 +184,8 @@ ResultOneCase ProcessOneCase(Ballots& ballots, const Candidates& candidates) {
 Results Process(const Cases& cases) {
   Results results;
   for (OneCase one_case : cases) {
-    auto& [candidates, ballots] = one_case;  // C++17 structured binding
+    Candidates& candidates = one_case.first;
+    Ballots& ballots = one_case.second;
     ResultOneCase result_one_case = ProcessOneCase(ballots, candidates);
     results.push_back(result_one_case);
   }
