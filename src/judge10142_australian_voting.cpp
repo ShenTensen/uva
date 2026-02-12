@@ -13,7 +13,7 @@
 #include <set>
 #include <string>
 #include <sstream>
-#include <unordered_map>
+#include <map>
 #include <utility>  // std::pair, std::make_pair
 #include <vector>
 
@@ -96,7 +96,7 @@ bool IsCandidatesLeftTies(const std::set<size_t>& candidates_left,
 }
 
 // 找到得票最少的候选人的索引。
-std::vector<size_t> FindLeastVotesCandidatesIndex(std::unordered_map<size_t, int>& vote) {
+std::vector<size_t> FindLeastVotesCandidatesIndex(std::map<size_t, int>& vote) {
   std::vector<size_t> least_indices;
   int least = std::numeric_limits<int>::max();
   for (const auto& one : vote) {
@@ -128,7 +128,7 @@ std::vector<size_t> ProcessOneCaseReal(Ballots& ballots, const size_t candidates
 
   std::vector<size_t> result_one_case;
   while (HasChoice(ballots) && result_one_case.empty()) {
-    std::unordered_map<size_t, int> vote_caculate;
+    std::map<size_t, int> vote_caculate;
     // 对剩下候选人计票，避免未统计此轮没得票候选人
     for (const auto index : candidates_left) {
       vote_caculate[index] = 0;
