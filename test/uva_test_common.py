@@ -92,6 +92,10 @@ def run_test(script_dir, problem_dir, program_name, test_slug, output_type=None)
   program_path = program_name
   input_path = os.path.join(problem_dir, "program_input", "%s-input.txt" % test_slug)
   reference_path = os.path.join(problem_dir, "reference_output", "%s-output-ref.txt" % output_slug)
+  # 避免输出目录尚未创建
+  output_folder = os.path.join(problem_dir, "program_output")
+  if not os.path.exists(output_folder):
+    os.mkdir(output_folder)
   output_path = os.path.join(problem_dir, "program_output", "%s-output.txt" % output_slug)
   test_runner = ProgramTest(script_dir, program_path, input_path, reference_path)
   return test_runner(output_path)
