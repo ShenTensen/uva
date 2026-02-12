@@ -13,7 +13,6 @@
 #include <set>
 #include <string>
 #include <sstream>
-#include <map>
 #include <utility>  // std::pair, std::make_pair
 #include <vector>
 
@@ -194,11 +193,14 @@ Results Process(const Cases& cases) {
 }
 
 void OutputResults(const Results& results) {
-  for (auto result : results) {
-    for (auto name : result) {
-      std::cout << name << '\n';
+  for (auto it = results.cbegin(); it != results.cend(); ++it) {
+    if (it != results.cbegin()) {
+      std::cout << '\n';
     }
 
-    std::cout << '\n';
+    for (const auto& name : *it) {
+      std::cout << name << '\n';
+    }
   }
 }
+
