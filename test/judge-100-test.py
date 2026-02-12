@@ -4,8 +4,8 @@
 
 """测试UAa Online Judge 100 The 3n + 1 Problem解答是否正确"""
 
-from test import gtest_test_utils  # 注意test目录下不能有test.py文件，否则test有歧义
-from test import uva_test_common
+import gtest_test_utils  # 注意test目录下不能有test.py文件，否则test有歧义
+import uva_test_common
 
 COMMAND = gtest_test_utils.GetTestExecutablePath('judge100_the_3n_plus_1_problem')
 
